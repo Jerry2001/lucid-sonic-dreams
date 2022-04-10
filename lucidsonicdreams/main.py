@@ -22,17 +22,6 @@ from .helper_functions import *
 from .sample_effects import *
 
 # Clone Official StyleGAN2-ADA Repository
-if not os.path.exists('stylegan2'):
-  pygit2.clone_repository('https://github.com/NVlabs/stylegan2-ada.git',
-                          'stylegan2')
-
-#StyleGAN2 Imports
-cwd = os.getcwd()
-os.chdir('stylegan2')
-import dnnlib
-from dnnlib.tflib.tfutil import * 
-os.chdir(cwd)
-
 
 def show_styles():
   '''Show names of available (non-custom) styles'''
@@ -494,10 +483,6 @@ class LucidSonicDream:
     resolution = self.resolution
     batch_size = self.batch_size
     num_frame_batches = int(len(self.noise)/batch_size)
-    Gs_syn_kwargs = {'output_transform': {'func': convert_images_to_uint8, 
-                                          'nchw_to_nhwc': True},
-                    'randomize_noise': False,
-                    'minibatch_size': batch_size}
 
     # Set-up temporary frame directory
     self.frames_dir = file_name.split('.mp4')[0] + '_frames'
