@@ -5,6 +5,8 @@ import requests
 import json
 import pandas as pd
 
+import librosa
+
 def download_weights(url, output):
   '''Download model weights from URL'''
 
