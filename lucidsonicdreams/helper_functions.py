@@ -5,12 +5,6 @@ import requests
 import json
 import pandas as pd
 
-import librosa
-import pygit2
-import gdown 
-from mega import Mega
-
-
 def download_weights(url, output):
   '''Download model weights from URL'''
 
