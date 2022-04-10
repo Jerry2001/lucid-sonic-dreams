@@ -16,7 +16,6 @@ import librosa
 import soundfile
 import moviepy.editor as mpy
 from moviepy.audio.AudioClip import AudioArrayClip
-import pygit2
 
 from .helper_functions import * 
 from .sample_effects import *
